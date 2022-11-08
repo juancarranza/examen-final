@@ -20,7 +20,7 @@ import umg.edu.gt.examenfinal.model.Actividad;
 import umg.edu.gt.examenfinal.service.ActividadService;
 
 @RestController
-@RequestMapping("/actividades")
+@RequestMapping("api/actividades")
 public class ActividadController {
     
     private ActividadService actividadService;
