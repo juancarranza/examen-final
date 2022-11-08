@@ -57,8 +57,21 @@ async function deleteActividad(id){
 }
 
 //deleteActividad
-function modificarActividad(id){
+async function modificarActividad(id){
     localStorage.setItem('identificador', id);
+
+    const getRequest = await fetch('api/actividades/'+id, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        //body: JSON.stringify({a: 1, b: 'Textual content'})
+    });
+    const actividad = await getRequest.json();
+
+
+    localStorage.setItem('actividad', JSON.stringify(actividad))
     window.location.href = "update.html";
 }
 
